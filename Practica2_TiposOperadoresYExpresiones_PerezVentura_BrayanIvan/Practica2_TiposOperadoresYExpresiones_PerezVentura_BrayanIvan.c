@@ -16,6 +16,7 @@ int main(){
     while(temp>0){
         temp/=2;
         num_bits++;
+        printf("Numero decimal: %d  Numero temp: %d\n", num_bits, temp);
     }
 
     int bits[num_bits];
@@ -24,6 +25,7 @@ int main(){
         bits[indice] = num_entero % 2;
         num_entero = num_entero / 2;
         indice++;
+        printf("bits indice: %d -- num entero: %d -- Indice: %d\n\n", bits[indice], num_entero, indice);
     }
 
     printf("Numero en bits: ");
@@ -32,5 +34,6 @@ int main(){
         printf("%d",bits[i]);
     }
     printf("\n");
+    
     return 0;
 }
