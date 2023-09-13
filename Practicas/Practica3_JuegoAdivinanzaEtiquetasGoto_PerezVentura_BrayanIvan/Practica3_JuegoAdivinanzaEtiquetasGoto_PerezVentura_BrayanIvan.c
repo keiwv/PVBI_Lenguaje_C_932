@@ -19,7 +19,7 @@ int main()
     mainGame();
     return 0;
 }
-
+// *********** FUNCTION DEVELOPMENT ********
 void mainGame()
 {
     int numRandom, numTry, numUser, op;
@@ -73,7 +73,7 @@ RESTART:
         }
     }
 }
-
+//*****************************
 void rulesGame()
 {
     printf("WELCOME TO THE GAME!\n");
