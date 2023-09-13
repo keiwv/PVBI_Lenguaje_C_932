@@ -30,7 +30,6 @@ START:
     numRandom = rand() % 100 + 1;
     numTry++;
 GUESSING:
-    printf("%d\n", numRandom);
     scanf("%d", &numUser);
     if (numRandom == numUser)
     {
