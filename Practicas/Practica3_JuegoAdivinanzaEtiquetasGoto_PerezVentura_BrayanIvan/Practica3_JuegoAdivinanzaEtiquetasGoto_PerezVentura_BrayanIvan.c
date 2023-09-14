@@ -28,11 +28,13 @@ START:
     rulesGame();
     srand(time(NULL));
     numRandom = rand() % 100 + 1;
-    numTry++;
+    numTry = 0;
 GUESSING:
+    printf("%d", numRandom);
     scanf("%d", &numUser);
     if (numRandom == numUser)
     {
+        numTry++;
         printf("You have won with %d tries!\n", numTry);
         goto RESTART;
     }
