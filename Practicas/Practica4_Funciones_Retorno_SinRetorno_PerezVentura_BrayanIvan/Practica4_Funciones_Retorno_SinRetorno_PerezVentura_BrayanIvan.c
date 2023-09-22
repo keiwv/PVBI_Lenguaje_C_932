@@ -42,7 +42,7 @@ void menu()
     int op, op2, result;
     do
     {
-        op = msge_menu(); //WE CALL THE MESSAGES FUNCTION HERE TO GET THE OPTION.
+        op = msge_menu(); // WE CALL THE MESSAGES FUNCTION HERE TO GET THE OPTION.
         switch (op)
         {
         case 1:
@@ -63,7 +63,7 @@ void menu()
         }
     } while (op != 0);
 }
-//MESSAGES FROM THE MENU
+// MESSAGES FROM THE MENU
 int msge_menu()
 {
     int op;
@@ -77,7 +77,10 @@ int msge_menu()
     return op;
 }
 
-//IN THIS FUNCTION, WE VALID IF THEIR INPUT IS A NUMBER, IF IT IS NOT, IT WILL LOOP UNTIL IT GETS THE RIGHT NUMBER. (IT WONT CRASH IF WE INTRODUCE A LETTER).
+/*
+    FUNCTION: VALID
+    DESCRIPTION: IN THIS FUNCTION
+*/
 int valid(char msge[], int ri, int rf)
 {
     int num;
@@ -93,7 +96,7 @@ int valid(char msge[], int ri, int rf)
     return num;
 }
 
-//In this function, we ask if we want to leave or not.
+// In this function, we ask if we want to leave or not.
 int leave()
 {
     int op;
@@ -105,14 +108,20 @@ int leave()
 }
 //***** THREE FUNCTIONS *********
 
+/*
+Function: calculateFibonacciNoRecursion
+Description: This function calculates and prints the Fibonacci sequence without using recursion.
+Parameters: None.
+Return Value: None (void).
+*/
 void calculateFibonacciNoRecursion()
 {
     int op, num, i, tempnum, tempnum2, result;
     result = 0;
     do
     {
-        printf("\nMETODO DE FIBONACCI SIN RECURSION\n");
-        num = valid("Introduce la cantidad de numeros Fibonacci que desees imprimir: ", 0, INT_MAX);
+        printf("\nFIBONACCI METHOD WITHOUT RECURSION\n");
+        num = valid("Enter the number of Fibonacci numbers you want to print: ", 0, INT_MAX);
 
         for (i = 0, tempnum = 0, tempnum2 = 1; i <= num; i++)
         {
@@ -127,14 +136,20 @@ void calculateFibonacciNoRecursion()
     } while (op != 1);
 }
 
+/*
+Function: calculateFibonacciRecursion
+Description: This function calculates the nth Fibonacci number using recursion.
+Parameters: None.
+Return Value: The nth Fibonacci number.
+*/
 int calculateFibonacciRecursion()
 {
     int num, i, tempnum, tempnum2, result;
     result = 0;
-    printf("\nMETODO DE FIBONACCI CON RECURSION\n");
-    num = valid("Introduce la cantidad de numeros Fibonacci que desees imprimir: ", 0, INT_MAX);
+    printf("\nFIBONACCI METHOD WITH RECURSION\n");
+    num = valid("Enter the number of Fibonacci numbers you want to print: ", 0, INT_MAX);
 
-    //We use this if to skip two special cases in the fibonacci method.
+    // We use this if to skip two special cases in the Fibonacci sequence.
     if (num == 0)
     {
         return 0;
@@ -159,20 +174,34 @@ int calculateFibonacciRecursion()
     }
 }
 
+/*
+Function: trianglePascal
+Description: This function prints a Pascal's triangle with a user-specified number of lines.
+Parameters: None.
+Return Value: None (void).
+*/
 void trianglePascal()
 {
-    int op, num, result, i;
-    result = 0;
+    int number, op, line, space, coef, i;
     do
     {
-        printf("\nTRIANGULO DE PASCAL\n");
-        num = valid("Introduce la cantidad de numeros para el triangulo de pascal: ", 0, INT_MAX);
+        number = valid("Enter the number of lines you want to use: ", 0, INT_MAX);
 
-        for (i = 0; i <= num; i++)
+        for (line = 1; line <= number; line++)
         {
-            result = pow(2, i);
-            printf("%d ", result);
+            for (space = 1; space <= number - line; space++)
+            {
+                printf("  ");
+            }
+
+            coef = 1;
+            for (i = 1; i <= line; i++)
+            {
+                printf("%4d", coef);
+                coef = coef * (line - i) / i;
+            }
+            printf("\n");
         }
         op = leave();
-    } while (op != 1);
+    } while (op != 0);
 }
