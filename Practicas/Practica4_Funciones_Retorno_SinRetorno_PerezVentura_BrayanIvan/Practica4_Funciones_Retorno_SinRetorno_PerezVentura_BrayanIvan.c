@@ -76,11 +76,7 @@ int msge_menu()
     op = valid("Selecciona tu opcion: ", 0, 3);
     return op;
 }
-
-/*
-    FUNCTION: VALID
-    DESCRIPTION: IN THIS FUNCTION
-*/
+//********* VALID THE INPUT*********
 int valid(char msge[], int ri, int rf)
 {
     int num;
@@ -113,7 +109,15 @@ Function: calculateFibonacciNoRecursion
 Description: This function calculates and prints the Fibonacci sequence without using recursion.
 Parameters: None.
 Return Value: None (void).
+Variables:
+- op: An integer representing the user's choice to continue or exit the program loop.
+- num: An integer representing the number of Fibonacci numbers to print.
+- i: A loop control variable.
+- tempnum: An integer used to store the current Fibonacci number in the sequence.
+- tempnum2: An integer used to store the next Fibonacci number in the sequence.
+- result: An integer used to store the result of adding tempnum and tempnum2.
 */
+
 void calculateFibonacciNoRecursion()
 {
     int op, num, i, tempnum, tempnum2, result;
@@ -141,7 +145,14 @@ Function: calculateFibonacciRecursion
 Description: This function calculates the nth Fibonacci number using recursion.
 Parameters: None.
 Return Value: The nth Fibonacci number.
+Variables:
+- num: An integer representing the number of Fibonacci numbers to print.
+- i: A loop control variable.
+- tempnum: An integer used to store the current Fibonacci number in the sequence.
+- tempnum2: An integer used to store the next Fibonacci number in the sequence.
+- result: An integer used to store the result of adding tempnum and tempnum2.
 */
+
 int calculateFibonacciRecursion()
 {
     int num, i, tempnum, tempnum2, result;
@@ -179,7 +190,15 @@ Function: trianglePascal
 Description: This function prints a Pascal's triangle with a user-specified number of lines.
 Parameters: None.
 Return Value: None (void).
+Variables:
+- number: An integer representing the number of lines in Pascal's triangle.
+- op: An integer representing the user's choice to continue or exit the program loop.
+- line: A loop control variable representing the current line in the triangle.
+- space: A loop control variable representing the number of spaces before each line.
+- coef: An integer used to calculate and store the coefficients in each line of the triangle.
+- i: A loop control variable.
 */
+
 void trianglePascal()
 {
     int number, op, line, space, coef, i;
