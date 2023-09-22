@@ -73,7 +73,6 @@ int msge_menu()
     printf("2.- Fibonacci con Recursion\n");
     printf("3.- Triángulo de Pascal\n");
     printf("0.- Salir\n");
-    printf("Selecciona tu opcion: ");
     op = valid("Selecciona tu opcion: ", 0, 3);
     return op;
 }
