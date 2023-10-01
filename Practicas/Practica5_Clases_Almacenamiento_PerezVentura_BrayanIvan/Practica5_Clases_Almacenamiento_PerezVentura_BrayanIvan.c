@@ -17,7 +17,7 @@ In this program, we will display a menu where the options are:
         Using register variables, we will save the value of the speed of each car. We will generate random speeds between 100 and 200 km/h for each car.
         Simulate a race calculating the time that each car takes to travel the ficticial distance (as an example, 1000 meters) to their speed.
 
-PVBI_Act _ _932
+PVBI_Act5_1_932
 */
 
 //**** LIBRARIES ******
@@ -271,21 +271,21 @@ int podium(float amlo, float felipeC, float enp)
     {
         if (felipeC > amlo)
         {
-            return 1;
+            return 1; //AMLO won
         }
     }
     if (amlo > enp)
     {
         if (felipeC > enp)
         {
-            return 2;
+            return 2; //ENP won
         }
     }
     if (amlo > felipeC)
     {
         if (enp > felipeC)
         {
-            return 3;
+            return 3; //FelipeC won
         }
     }
 
@@ -293,19 +293,19 @@ int podium(float amlo, float felipeC, float enp)
     {
         if (amlo == felipeC)
         {
-            return 4;
+            return 4; //Triple tie
         }
         return 5;
     }
 
     if (amlo == felipeC)
     {
-        return 6;
+        return 6; //Tie AMLO AND FelipeC
     }
 
     if (enp == felipeC)
     {
-        return 7;
+        return 7; //Tie ENP and FelipeC
     }
     return 0;
 }
