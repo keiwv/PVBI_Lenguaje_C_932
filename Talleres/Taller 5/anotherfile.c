@@ -1,1 +1,2 @@
-double saldo = 100.0;
+
+int saldo = 100.0;
