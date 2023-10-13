@@ -16,6 +16,7 @@ void copyArrayy(int size, int *array, int *copyArray);
 void concatenateArrays(int size, int *array, int *newArray, int *finalArray, int nSize);
 int comparationArray(int size, int *array, int *compArray);
 int findElementMax(int size, int *array);
+void fillArray(int size, int array[], int ri, int rs);
 //**** MAIN FUNCTIONS ***
 int main()
 {
@@ -41,30 +42,18 @@ void menu()
         switch (op)
         {
         case 1:
-            for (i = 0; i < size; i++)
-            {
-                array[i] = numRandom(1, 30);
-            }
+            fillArray(size, array, 1, 30);
             sumArray(size, array);
             break;
         case 2:
-            for (i = 0; i < size; i++)
-            {
-                array[i] = numRandom(1, 30);
-            }
+            fillArray(size, array, 1, 30);
             copyArrayy(size, array, copyyArray);
             printf("Copiado correctamente\n");
             system("PAUSE");
             break;
         case 3:
-            for (i = 0; i < size; i++)
-            {
-                array[i] = numRandom(1, 30);
-            }
-            for (i = 0; i < nSize; i++)
-            {
-                newArray[i] = numRandom(1, 30);
-            }
+            fillArray(size, array, 1, 30);
+            fillArray(nSize, newArray, 1, 30);
             concatenateArrays(size, array, newArray, finalArray, nSize);
             for (i = 0; i < (nSize + size); i++)
             {
@@ -90,10 +79,7 @@ void menu()
             system("PAUSE");
             break;
         case 5:
-            for (i = 0; i < size; i++)
-            {
-                array[i] = numRandom(1, 30);
-            }
+            fillArray(size, array, 1, 30);
             maxNumber = findElementMax(size, array);
             printf("El numero mayor encontrado es: %d\n", maxNumber);
             system("PAUSE");
@@ -200,4 +186,13 @@ int findElementMax(int size, int *array)
         ptr++;
     }
     return max;
+}
+
+void fillArray(int size, int array[], int ri, int rf)
+{
+    int i;
+    for(i = 0; i < size; i++)
+    {
+        array[i] = numRandom(ri,rf);
+    }
 }
