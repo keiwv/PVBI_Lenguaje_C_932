@@ -1,6 +1,13 @@
 /*
+    Code created: 11/04/2023 ** Code modified: 11/08/2023
+    Description:
+    This C program is an interactive menu that allows the user to perform various operations.
+    Functions such as msge_menu, menu, argLineCmds, ordArrays, and matrix are used to handle the operations.
 
+    The main function processes command-line arguments and calls the menu.
 */
+
+
 
 //***** LIBRARIES *****
 #include "Frijoles.h"
@@ -13,7 +20,8 @@ void menu();
 void argLineCmds(int a, int b);
 void ordArrays();
 void matrix(int *ptr);
-//***** MAIN FUNCTIONS *****
+//***** MAIN FUNCTION *****
+
 int main(int argc, char *argv[])
 {
     printf("%d\n", argc);
@@ -26,6 +34,14 @@ int main(int argc, char *argv[])
     return 0;
 }
 //***** PROTOTYPE FUNCTIONS DEVELOPMENT *****
+/* 
+Function: msge_menu
+Description: Displays a menu to the user, asks them to select an option, and validates the user's input within a specified range.
+Parameters: None.
+Return Value: An integer representing the user's selected option.
+Variables:
+- None.
+*/
 
 int msge_menu()
 {
@@ -35,6 +51,17 @@ int msge_menu()
     printf("0.- Salir\n");
     return valid("Selecciona tu opcion: ", 0, 3);
 }
+/* 
+Function: menu
+Description: Displays a menu, allows the user to choose options, and performs corresponding actions based on the selected option.
+Parameters:
+- a: An integer representing the first operand (used in option 1).
+- b: An integer representing the second operand (used in option 1).
+Return Value: None (void).
+Variables:
+- op: An integer to store the user's menu choice.
+- random: A 3x3 integer array representing a matrix used in option 3.
+*/
 
 void menu(int a, int b)
 {
@@ -59,14 +86,37 @@ void menu(int a, int b)
         }
     } while (op != 0);
 }
+/* 
+Function: argLineCmds
+Description: Calculates and displays the results of basic arithmetic operations on two integers.
+Parameters:
+- a: An integer representing the first operand.
+- b: An integer representing the second operand.
+Return Value: None (void).
+Variables:
+- None.
+*/
+
 void argLineCmds(int a, int b)
 {
     printf("El resultado de la suma es: %d\n", a + b);
     printf("El resultado de la resta es: %d\n", a - b);
     printf("El resultado de la multiplicacion es: %d\n", a * b);
-    printf("El resultado de la division es: %d\n", a / b);
+    printf("El resultado de la division es: %f\n", a / b);
     system("PAUSE");
 }
+/* 
+Function: ordArrays
+Description: Sorts an array of strings in ascending order and displays the sorted and unsorted arrays.
+Parameters: None.
+Return Value: None (void).
+Variables:
+- ctrs: A 2D character array storing unsorted strings.
+- q: An array of pointers to strings.
+- i: An integer for looping.
+- j: An integer for nested looping.
+- temp: A temporary pointer for swapping strings.
+*/
 
 void ordArrays()
 {
@@ -100,6 +150,18 @@ void ordArrays()
     }
     system("PAUSE");
 }
+/* 
+Function: matrix
+Description: Calculates the sum of elements in a 3x3 matrix, finds the maximum value, and displays the matrix along with the results.
+Parameters:
+- ptr: A pointer to an integer array representing a 3x3 matrix.
+Return Value: None (void).
+Variables:
+- i: An integer for looping through rows.
+- j: An integer for looping through columns.
+- result: An integer to store the sum of matrix elements.
+- max: An integer to store the maximum element in the matrix.
+*/
 
 void matrix(int *ptr)
 {
